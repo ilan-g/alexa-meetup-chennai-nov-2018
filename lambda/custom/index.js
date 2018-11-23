@@ -8,7 +8,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to Alexa Bangalore Meetup!. I am your work in-progress skill. '
+    const speechText = 'Welcome to Alexa Chennai Meetup!. '
         +'Currently i can recommand you places to visit in town.'
         +'To continue please tell me your name?';
     const repromptText = 'To continue please tell me your name?';
@@ -34,8 +34,8 @@ const WelcomeIntentHandler = {
         .addDelegateDirective()
         .getResponse();
     } else if (name && !zone){
-      const speechText = `Hey ${name}, good to meet you. which part of bangalore you stay in?`;
-      const repromptText = 'which part of bangalore you stay in? Tell me if its North, South, East or West';
+      const speechText = `Hey ${name}, good to meet you. which part of Chennai you stay in?`;
+      const repromptText = 'which part of Chennai you stay in? Tell me if its North, South, East or West';
       return handlerInput.responseBuilder
         .speak(speechText)
         .reprompt(repromptText)
@@ -43,13 +43,13 @@ const WelcomeIntentHandler = {
     } else {
       let speechText;
       if(zone == 'north'){
-        speechText = 'i recommand Nandi Hills. Its a wonderful place for a short road trip with your loved ones';
+        speechText = 'I recommend Marina beach. Its longest beach in India and it is one of the pride of Chennai';
       } else if (zone == 'south'){
-        speechText = 'Hmm. South Bangalore is know for temples and tasty food. Try the Basavanagudo temples and tasty dosa @ Vidyarthi Bhavan';
+        speechText = 'Hmm. Adyar is one of the best place. Banyan tree which is located in Adyar is in middle of Theosophical Society Campus.  It is around 450 years old and estimated to be the second largest banyan tree in India';
       } else if (zone == 'east'){
-        speechText = 'East bangalore is known for its larvish malls and multiplexs. Please try the Phoenix market city mall';
+        speechText = 'East Coast Road is one of the main attraction. Some of the places in and around ECR are Muttukadu boat house, dakshin chitra and Mahabalipuram';
       } else {
-        speechText = 'i suggest you to visit the 400 years old Big Banyan tree. The single plant covers over 3 acres of land and is one of the largest of its kinds';
+        speechText = 'I suggest you to visit Anna Nagar Tower Park. This park is around 16 acres and was was built in 1968 as part of the World Trade Fair.';
       }
       return handlerInput.responseBuilder
       .speak(speechText)
