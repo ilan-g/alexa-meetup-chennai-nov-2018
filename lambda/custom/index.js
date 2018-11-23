@@ -9,7 +9,7 @@ const LaunchRequestHandler = {
   },
   handle(handlerInput) {
     const speechText = 'Welcome to Alexa Chennai Meetup!. '
-        +'Currently i can recommand you places to visit in town.'
+        +'Currently i can recommend you places to visit in town. '
         +'To continue please tell me your name?';
     const repromptText = 'To continue please tell me your name?';
 
