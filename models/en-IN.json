@@ -1,0 +1,132 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "meetup",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "WelcomeIntent",
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "my name is {name}",
+                                "{name}"
+                            ]
+                        },
+                        {
+                            "name": "zone",
+                            "type": "ZONAL_AREA",
+                            "samples": [
+                                "i belong to {zone}",
+                                "{zone}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "i belong to {zone}",
+                        "{zone}",
+                        "my name is {name}",
+                        "{name}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "ZONAL_AREA",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "west"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "east"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "south"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "north"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "WelcomeIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "name",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.232966450415.554668844866"
+                            }
+                        },
+                        {
+                            "name": "zone",
+                            "type": "ZONAL_AREA",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.232966450415.297683450285"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.232966450415.554668844866",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me your name?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.232966450415.297683450285",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "which part of bangalore you stay in?"
+                    }
+                ]
+            }
+        ]
+    }
+}
